@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SSL Scanner</title>
+</head>
+<body>
+  <h2>SSL Scanner</h2>
+  <form method="post">
+    Domain: <input type="text" name="domain" required>
+    <button type="submit">Scan</button>
+  </form>
+
+  {% if result %}
+    <h3>Result:</h3>
+    <pre>
+{% for k, v in result.items() %}
+{{ k }}: {{ v }}
+{% endfor %}
+    </pre>
+  {% endif %}
+</body>
+</html>
